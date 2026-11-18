@@ -1,0 +1,1185 @@
+
+/* =========================================================
+   HOME EASE ADMINISTRATION STYLESHEET
+   Primary Colour: Deep Burgundy #450011
+   Applies ONLY to admin pages.
+========================================================= */
+
+
+/* =========================================================
+   1. COLOUR VARIABLES
+========================================================= */
+
+:root {
+    --admin-maroon: #450011;
+    --admin-maroon-dark: #2D000B;
+    --admin-maroon-light: #F2E6E9;
+
+    --admin-ivory: #FAF7F3;
+    --admin-white: #FFFFFF;
+
+    --admin-text: #30272A;
+    --admin-muted: #82777A;
+    --admin-border: #EAE1E3;
+
+    --admin-green: #287A50;
+    --admin-green-light: #E5F3EB;
+
+    --admin-yellow: #B7791F;
+    --admin-yellow-light: #FFF4D6;
+
+    --admin-red: #C03945;
+    --admin-red-light: #FCE8E9;
+
+    --admin-shadow:
+        0 8px 25px rgba(69, 0, 17, 0.07);
+
+    --admin-shadow-hover:
+        0 14px 35px rgba(69, 0, 17, 0.13);
+
+    --admin-radius: 16px;
+}
+
+
+/* =========================================================
+   2. GENERAL ADMIN BACKGROUND
+========================================================= */
+
+.admin-dashboard-page,
+.admin-page {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--admin-text);
+
+    background-color: var(--admin-ivory);
+
+    background-image:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(69, 0, 17, 0.055) 0,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 92% 80%,
+            rgba(69, 0, 17, 0.045) 0,
+            transparent 27%
+        ),
+        linear-gradient(
+            135deg,
+            #FAF7F3 0%,
+            #F8F1F0 50%,
+            #FAF7F3 100%
+        );
+
+    background-attachment: fixed;
+    font-family: "Segoe UI", Arial, sans-serif;
+    position: relative;
+}
+
+
+/* Decorative background circles */
+
+.admin-dashboard-page::before,
+.admin-page::before {
+    content: "";
+    position: fixed;
+    width: 280px;
+    height: 280px;
+    top: 150px;
+    right: -150px;
+
+    border: 35px solid rgba(69, 0, 17, 0.035);
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+.admin-dashboard-page::after,
+.admin-page::after {
+    content: "";
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    bottom: -100px;
+    left: -100px;
+
+    border: 25px solid rgba(69, 0, 17, 0.035);
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Keep page content above decorations */
+
+.admin-app,
+.admin-main,
+.admin-container,
+.report-container,
+.admin-footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   3. ADMIN NAVIGATION BAR
+========================================================= */
+
+.admin-topbar {
+    background: var(--admin-maroon);
+    color: var(--admin-white);
+
+    padding: 17px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    box-shadow: 0 5px 20px rgba(45, 0, 11, 0.18);
+}
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-brand-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+
+    color: white;
+    font-size: 22px;
+}
+
+.admin-brand-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.admin-brand-copy h1,
+.admin-brand-copy h2,
+.admin-brand-copy p {
+    margin: 0;
+}
+
+.admin-brand-copy h1,
+.admin-brand-copy h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.admin-brand-copy p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+}
+
+.admin-topbar-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.admin-topbar-nav a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+
+    padding: 10px 14px;
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.admin-topbar-nav a:hover,
+.admin-topbar-nav a.active {
+    background: rgba(255, 255, 255, 0.16);
+    color: white;
+}
+
+.admin-topbar-nav .admin-home-link {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.admin-topbar-nav .admin-logout-link {
+    background: white;
+    color: var(--admin-maroon);
+}
+
+.admin-topbar-nav .admin-logout-link:hover {
+    background: var(--admin-maroon-light);
+    color: var(--admin-maroon-dark);
+}
+
+
+/* =========================================================
+   4. MAIN CONTENT CONTAINERS
+========================================================= */
+
+.admin-main {
+    width: 90%;
+    max-width: 1450px;
+    margin: 35px auto;
+}
+
+.admin-container,
+.report-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 35px auto;
+}
+
+
+/* =========================================================
+   5. PAGE HEADINGS
+========================================================= */
+
+.page-heading {
+    color: var(--admin-maroon);
+    font-size: 28px;
+    font-weight: 750;
+
+    margin: 0 0 10px;
+    padding-left: 15px;
+
+    border-left: 5px solid var(--admin-maroon);
+}
+
+.page-description {
+    color: var(--admin-muted);
+    font-size: 14px;
+    line-height: 1.7;
+
+    margin: 0 0 28px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    color: var(--admin-maroon);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.back-link:hover {
+    color: var(--admin-maroon-dark);
+}
+
+
+/* =========================================================
+   6. DASHBOARD WELCOME SECTION
+========================================================= */
+
+.admin-welcome {
+    background:
+        linear-gradient(
+            120deg,
+            #450011,
+            #6A102B,
+            #8A3049
+        );
+
+    color: white;
+
+    padding: 35px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    box-shadow: 0 12px 30px rgba(69, 0, 17, 0.18);
+    overflow: hidden;
+}
+
+.admin-welcome h1,
+.admin-welcome h2,
+.admin-welcome p {
+    color: white;
+}
+
+.admin-welcome-copy {
+    max-width: 650px;
+}
+
+.admin-welcome h1 {
+    font-size: 30px;
+    margin: 8px 0 12px;
+}
+
+.admin-welcome p {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.88;
+}
+
+.admin-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.admin-eyebrow-dot {
+    width: 8px;
+    height: 8px;
+    background: #D8B6A0;
+    border-radius: 50%;
+}
+
+.admin-welcome-mark {
+    font-size: 85px;
+    opacity: 0.2;
+}
+
+
+/* =========================================================
+   7. DASHBOARD SECTIONS
+========================================================= */
+
+.admin-section {
+    margin-top: 35px;
+}
+
+.admin-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.admin-section-heading h2 {
+    color: var(--admin-maroon);
+    font-size: 20px;
+    margin: 0;
+}
+
+.admin-section-kicker {
+    color: var(--admin-muted);
+    font-size: 12px;
+}
+
+.admin-live-label {
+    color: var(--admin-green);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   8. DASHBOARD STATISTICS CARDS
+========================================================= */
+
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.admin-stat-card {
+    background: var(--admin-white);
+    padding: 23px;
+    border-radius: var(--admin-radius);
+
+    border: 1px solid var(--admin-border);
+    box-shadow: var(--admin-shadow);
+
+    transition: 0.25s ease;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--admin-shadow-hover);
+}
+
+.admin-stat-featured {
+    border-top: 4px solid var(--admin-maroon);
+}
+
+.admin-stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-stat-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+    background: var(--admin-maroon-light);
+
+    color: var(--admin-maroon);
+    font-size: 20px;
+}
+
+.customers-icon,
+.providers-icon,
+.services-icon,
+.bookings-icon {
+    background: var(--admin-maroon-light);
+    color: var(--admin-maroon);
+}
+
+.admin-stat-caption {
+    color: var(--admin-muted);
+    font-size: 13px;
+    margin-top: 17px;
+}
+
+.admin-stat-number {
+    color: var(--admin-maroon);
+    font-size: 30px;
+    font-weight: 750;
+    margin: 5px 0;
+}
+
+.admin-stat-description {
+    color: var(--admin-muted);
+    font-size: 12px;
+}
+
+.admin-stat-link {
+    display: inline-block;
+    margin-top: 15px;
+
+    color: var(--admin-maroon);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.admin-stat-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   9. DASHBOARD PANELS
+========================================================= */
+
+.admin-content-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 22px;
+}
+
+.admin-panel {
+    background: white;
+    padding: 25px;
+    border-radius: var(--admin-radius);
+
+    border: 1px solid var(--admin-border);
+    box-shadow: var(--admin-shadow);
+}
+
+.admin-panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.admin-panel-heading h2 {
+    color: var(--admin-maroon);
+    font-size: 17px;
+    margin: 0;
+}
+
+.admin-panel-description {
+    color: var(--admin-muted);
+    font-size: 12px;
+}
+
+.admin-panel-link {
+    color: var(--admin-maroon);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   10. DASHBOARD BOOKING LIST
+========================================================= */
+
+.admin-booking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.admin-booking-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px;
+    background: #FCFAF9;
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+}
+
+.admin-booking-row p {
+    margin: 4px 0;
+    font-size: 13px;
+}
+
+.admin-booking-status {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.pending-status {
+    color: #95620B;
+    background: var(--admin-yellow-light);
+}
+
+.accepted-status {
+    color: var(--admin-green);
+    background: var(--admin-green-light);
+}
+
+.rejected-status {
+    color: var(--admin-red);
+    background: var(--admin-red-light);
+}
+
+.admin-booking-track {
+    height: 5px;
+    border-radius: 10px;
+    background: #EEE;
+    margin-top: 10px;
+}
+
+.pending-track {
+    background: var(--admin-yellow);
+}
+
+.accepted-track {
+    background: var(--admin-green);
+}
+
+.rejected-track {
+    background: var(--admin-red);
+}
+
+.admin-booking-note {
+    color: var(--admin-muted);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   11. DASHBOARD QUICK LINKS
+========================================================= */
+
+.admin-quick-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-quick-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 14px;
+    margin-bottom: 10px;
+
+    text-decoration: none;
+    color: var(--admin-text);
+
+    background: #FCFAF9;
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+
+    transition: 0.2s ease;
+}
+
+.admin-quick-link:hover {
+    background: var(--admin-maroon-light);
+    border-color: rgba(69, 0, 17, 0.2);
+    transform: translateX(4px);
+}
+
+.admin-quick-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--admin-maroon-light);
+    color: var(--admin-maroon);
+    border-radius: 10px;
+}
+
+.admin-quick-copy {
+    flex: 1;
+}
+
+.admin-quick-copy strong {
+    display: block;
+    font-size: 13px;
+    color: var(--admin-maroon);
+}
+
+.admin-quick-copy small {
+    color: var(--admin-muted);
+    font-size: 11px;
+}
+
+.admin-quick-arrow {
+    color: var(--admin-maroon);
+    font-size: 18px;
+}
+
+.admin-bottom-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: var(--admin-maroon-light);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 25px;
+
+    color: var(--admin-maroon);
+    font-size: 13px;
+}
+
+.admin-bottom-note-icon {
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   12. FILTERS AND SEARCH FOR ADMIN PAGES
+========================================================= */
+
+.filter-form,
+.date-form,
+.admin-filter-form {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-panel,
+.filter-card {
+    background: white;
+    padding: 22px;
+    margin-bottom: 25px;
+
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+
+    box-shadow: var(--admin-shadow);
+}
+
+.filter-form label,
+.date-form label,
+.admin-filter-form label,
+.filter-panel label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--admin-text);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   13. INPUTS, SELECTS AND TEXTAREAS
+========================================================= */
+
+.admin-page input,
+.admin-page select,
+.admin-page textarea,
+.admin-dashboard-page input,
+.admin-dashboard-page select,
+.admin-dashboard-page textarea {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 11px 13px;
+
+    border: 1px solid var(--admin-border);
+    border-radius: 9px;
+
+    background: #FFFEFD;
+    color: var(--admin-text);
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+.admin-page input:focus,
+.admin-page select:focus,
+.admin-page textarea:focus,
+.admin-dashboard-page input:focus,
+.admin-dashboard-page select:focus,
+.admin-dashboard-page textarea:focus {
+    border-color: var(--admin-maroon);
+    box-shadow: 0 0 0 3px rgba(69, 0, 17, 0.08);
+}
+
+.admin-page textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+/* =========================================================
+   14. BUTTONS
+========================================================= */
+
+.admin-page button,
+.admin-dashboard-page button,
+.admin-page .btn,
+.admin-dashboard-page .btn,
+.admin-page .export-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 11px 19px;
+
+    background: var(--admin-maroon);
+    color: white;
+
+    border: 1px solid var(--admin-maroon);
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.admin-page button:hover,
+.admin-dashboard-page button:hover,
+.admin-page .btn:hover,
+.admin-dashboard-page .btn:hover,
+.admin-page .export-button:hover {
+    background: var(--admin-maroon-dark);
+    border-color: var(--admin-maroon-dark);
+    transform: translateY(-2px);
+}
+
+.admin-page .export-button {
+    background: var(--admin-green);
+    border-color: var(--admin-green);
+}
+
+.admin-page .export-button:hover {
+    background: #1C603D;
+}
+
+
+/* =========================================================
+   15. SUMMARY CARDS AND REPORT STATISTICS
+========================================================= */
+
+.report-cards,
+.summary-cards,
+.admin-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.report-card,
+.summary-card {
+    background: white;
+    padding: 22px;
+
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+
+    box-shadow: var(--admin-shadow);
+    transition: 0.25s ease;
+}
+
+.report-card:hover,
+.summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--admin-shadow-hover);
+}
+
+.report-card h3,
+.summary-card h3 {
+    color: var(--admin-muted);
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 12px;
+}
+
+.report-card strong,
+.summary-card strong {
+    color: var(--admin-maroon);
+    font-size: 28px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   16. TABLES
+========================================================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+
+    background: white;
+    border-radius: var(--admin-radius);
+    border: 1px solid var(--admin-border);
+
+    box-shadow: var(--admin-shadow);
+    margin-bottom: 28px;
+}
+
+.admin-page table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 13px;
+}
+
+.admin-page table th {
+    padding: 16px 15px;
+
+    background: var(--admin-maroon);
+    color: white;
+
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.admin-page table td {
+    padding: 15px;
+
+    color: var(--admin-text);
+    border-bottom: 1px solid var(--admin-border);
+    vertical-align: middle;
+}
+
+.admin-page table tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-page table tbody tr {
+    transition: 0.2s ease;
+}
+
+.admin-page table tbody tr:hover {
+    background: #FBF5F6;
+}
+
+
+/* =========================================================
+   17. ROLE AND BOOKING STATUS BADGES
+========================================================= */
+
+.role-badge,
+.status-badge {
+    display: inline-block;
+
+    padding: 6px 11px;
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.role-badge {
+    color: var(--admin-maroon);
+    background: var(--admin-maroon-light);
+}
+
+.status-badge.pending {
+    color: #95620B;
+    background: var(--admin-yellow-light);
+}
+
+.status-badge.accepted,
+.status-badge.completed {
+    color: var(--admin-green);
+    background: var(--admin-green-light);
+}
+
+.status-badge.rejected,
+.status-badge.cancelled {
+    color: var(--admin-red);
+    background: var(--admin-red-light);
+}
+
+
+/* =========================================================
+   18. REPORTS PAGE
+========================================================= */
+
+.admin-reports-page {
+    background-color: var(--admin-ivory);
+}
+
+.report-section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+
+    box-shadow: var(--admin-shadow);
+}
+
+.report-section h2 {
+    color: var(--admin-maroon);
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.report-section h3 {
+    color: var(--admin-maroon);
+}
+
+.summary {
+    background: var(--admin-maroon-light);
+    color: var(--admin-maroon);
+
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   19. MESSAGES
+========================================================= */
+
+.error-message,
+.alert-error {
+    padding: 13px 16px;
+    margin-bottom: 18px;
+
+    background: var(--admin-red-light);
+    color: #A52632;
+
+    border-left: 4px solid var(--admin-red);
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.success-message,
+.alert-success {
+    padding: 13px 16px;
+    margin-bottom: 18px;
+
+    background: var(--admin-green-light);
+    color: #21643F;
+
+    border-left: 4px solid var(--admin-green);
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   20. FOOTER
+========================================================= */
+
+.admin-footer {
+    margin-top: 50px;
+    padding: 23px 5%;
+
+    background: var(--admin-maroon);
+    color: rgba(255, 255, 255, 0.8);
+
+    text-align: center;
+    font-size: 12px;
+}
+
+.admin-footer p {
+    margin: 0;
+}
+
+.admin-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   21. RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .admin-stats-grid,
+    .report-cards,
+    .summary-cards,
+    .admin-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .admin-topbar {
+        padding: 15px 5%;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-topbar-nav {
+        width: 100%;
+        gap: 5px;
+    }
+
+    .admin-topbar-nav a {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+
+    .admin-main,
+    .admin-container,
+    .report-container {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .admin-welcome {
+        padding: 25px;
+    }
+
+    .admin-welcome h1 {
+        font-size: 24px;
+    }
+
+    .admin-welcome-mark {
+        display: none;
+    }
+
+    .page-heading {
+        font-size: 23px;
+    }
+
+    .admin-stats-grid,
+    .report-cards,
+    .summary-cards,
+    .admin-summary-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .admin-stat-card,
+    .report-card,
+    .summary-card {
+        padding: 17px;
+    }
+
+    .admin-stat-number,
+    .report-card strong,
+    .summary-card strong {
+        font-size: 23px;
+    }
+
+    .admin-panel,
+    .report-section {
+        padding: 18px;
+    }
+
+    .filter-form,
+    .date-form,
+    .admin-filter-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .admin-stats-grid,
+    .report-cards,
+    .summary-cards,
+    .admin-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-booking-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-welcome {
+        padding: 22px;
+    }
+
+    .admin-welcome h1 {
+        font-size: 21px;
+    }
+
+}

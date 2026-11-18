@@ -1,0 +1,529 @@
+
+/* ==========================================================
+   HOME EASE - LOGIN PAGE ONLY
+   Theme: Navy, Purple, Rose Pink and Hot Pink
+   This stylesheet must load AFTER style.css
+   ========================================================== */
+
+.homeease-auth-page {
+    --he-navy: #14243D;
+    --he-purple: #56365E;
+    --he-rose: #C04489;
+    --he-pink: #FF3D9A;
+    --he-pale-pink: #FFF0F7;
+    --he-text: #263247;
+    --he-muted: #758094;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #F8F7FA;
+    color: var(--he-text);
+    font-family: inherit;
+}
+
+/* HEADER */
+
+.homeease-auth-page .main-header {
+    background: #FFFFFF;
+    border-bottom: 1px solid #ECE8EF;
+    box-shadow: 0 3px 15px rgba(20, 36, 61, 0.035);
+}
+
+.homeease-auth-page .navbar {
+    width: min(1160px, 92%);
+    min-height: 76px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.homeease-auth-page .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--he-navy);
+    text-decoration: none;
+}
+
+.homeease-auth-page .brand-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--he-navy), var(--he-purple));
+    color: #FFFFFF;
+    font-size: 1.7rem;
+}
+
+.homeease-auth-page .homeease-brand-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-weight: 850;
+    line-height: 1.1;
+}
+
+.homeease-auth-page .brand-accent {
+    color: var(--he-rose);
+}
+
+.homeease-auth-page .homeease-brand-text small {
+    margin-top: 5px;
+    color: var(--he-muted);
+    font-size: 0.56rem;
+    font-weight: 750;
+    letter-spacing: 1.5px;
+}
+
+.homeease-auth-page .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.homeease-auth-page .main-nav a {
+    color: var(--he-navy);
+    font-size: 0.93rem;
+    font-weight: 650;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.homeease-auth-page .main-nav a:hover {
+    color: var(--he-rose);
+}
+
+/* MAIN LOGIN AREA */
+
+.homeease-auth-page .he-auth-main {
+    width: min(1120px, 92%);
+    margin: 46px auto;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+}
+
+.homeease-auth-page .he-login-layout {
+    width: 100%;
+    min-height: 590px;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    background: #FFFFFF;
+    border: 1px solid #ECE8EF;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 55px rgba(20, 36, 61, 0.09);
+}
+
+/* LOGIN FORM PANEL */
+
+.homeease-auth-page .he-login-form-panel {
+    padding: clamp(32px, 5vw, 65px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.homeease-auth-page .he-login-heading {
+    margin-bottom: 30px;
+}
+
+.homeease-auth-page .he-auth-eyebrow {
+    display: inline-block;
+    color: var(--he-rose);
+    font-size: 0.76rem;
+    font-weight: 850;
+    letter-spacing: 2px;
+}
+
+.homeease-auth-page .he-login-heading h1 {
+    margin: 14px 0 13px;
+    color: var(--he-navy);
+    font-size: clamp(2rem, 3.4vw, 2.7rem);
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+}
+
+.homeease-auth-page .he-login-heading h1 span {
+    color: var(--he-pink);
+}
+
+.homeease-auth-page .he-login-heading p {
+    max-width: 430px;
+    margin: 0;
+    color: var(--he-muted);
+    font-size: 0.96rem;
+    line-height: 1.75;
+}
+
+/* ERROR MESSAGE */
+
+.homeease-auth-page .he-auth-message {
+    margin-bottom: 22px;
+    padding: 13px 15px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.homeease-auth-page .he-auth-error {
+    border: 1px solid #F1B7C8;
+    background: #FFF0F4;
+    color: #A5224E;
+}
+
+/* FORM */
+
+.homeease-auth-page .he-login-form {
+    display: grid;
+    gap: 22px;
+}
+
+.homeease-auth-page .he-form-group {
+    display: grid;
+    gap: 9px;
+}
+
+.homeease-auth-page .he-form-group label {
+    color: var(--he-navy);
+    font-size: 0.91rem;
+    font-weight: 750;
+}
+
+.homeease-auth-page .he-form-group label span {
+    color: var(--he-rose);
+}
+
+.homeease-auth-page .he-form-group input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 52px;
+    padding: 13px 15px;
+    border: 1px solid #DDD6E4;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: var(--he-navy);
+    font: inherit;
+    font-size: 0.94rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.homeease-auth-page .he-form-group input::placeholder {
+    color: #A2A1AC;
+}
+
+.homeease-auth-page .he-form-group input:focus {
+    outline: none;
+    border-color: var(--he-rose);
+    box-shadow: 0 0 0 4px rgba(192, 68, 137, 0.10);
+}
+
+/* LOGIN BUTTON */
+
+.homeease-auth-page .he-register-submit {
+    width: 100%;
+    min-height: 53px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(110deg, var(--he-purple), var(--he-rose), var(--he-pink));
+    color: #FFFFFF;
+    font: inherit;
+    font-size: 0.96rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(192, 68, 137, 0.20);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.homeease-auth-page .he-register-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(192, 68, 137, 0.30);
+}
+
+.homeease-auth-page .he-register-submit span {
+    font-size: 1.2rem;
+}
+
+/* ACCOUNT LINKS */
+
+.homeease-auth-page .he-register-login {
+    margin: 25px 0 0;
+    color: var(--he-muted);
+    font-size: 0.91rem;
+    text-align: center;
+}
+
+.homeease-auth-page .he-register-login a {
+    color: var(--he-rose);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.homeease-auth-page .he-register-login a:hover {
+    color: var(--he-purple);
+    text-decoration: underline;
+}
+
+.homeease-auth-page .he-register-back {
+    align-self: center;
+    margin-top: 20px;
+    color: var(--he-muted);
+    font-size: 0.88rem;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.homeease-auth-page .he-register-back:hover {
+    color: var(--he-rose);
+}
+
+/* RIGHT PROMOTIONAL PANEL */
+
+.homeease-auth-page .he-login-aside {
+    min-height: 590px;
+    padding: clamp(32px, 4vw, 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        145deg,
+        #14243D 0%,
+        #302B50 42%,
+        #56365E 68%,
+        #C04489 100%
+    );
+    color: #FFFFFF;
+}
+
+.homeease-auth-page .he-login-aside::before {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    top: -170px;
+    right: -130px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 35px rgba(255, 255, 255, 0.035),
+        0 0 0 70px rgba(255, 255, 255, 0.025);
+    pointer-events: none;
+}
+
+.homeease-auth-page .he-login-aside::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    bottom: -190px;
+    left: -110px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 50%;
+    box-shadow: 0 0 0 35px rgba(255, 255, 255, 0.025);
+    pointer-events: none;
+}
+
+.homeease-auth-page .he-login-aside-content,
+.homeease-auth-page .he-login-aside-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.homeease-auth-page .he-aside-kicker {
+    color: #FFD0E8;
+    font-size: 0.74rem;
+    font-weight: 850;
+    letter-spacing: 2px;
+}
+
+.homeease-auth-page .he-login-symbol {
+    width: 66px;
+    height: 66px;
+    margin-top: 35px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 19px;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 2.6rem;
+}
+
+.homeease-auth-page .he-login-aside h2 {
+    max-width: 420px;
+    margin: 25px 0 14px;
+    color: #FFFFFF;
+    font-size: clamp(1.8rem, 3vw, 2.45rem);
+    line-height: 1.2;
+    letter-spacing: -0.6px;
+}
+
+.homeease-auth-page .he-login-aside-content > p {
+    max-width: 420px;
+    margin: 0;
+    color: #E9E3F0;
+    font-size: 0.94rem;
+    line-height: 1.75;
+}
+
+/* BENEFITS */
+
+.homeease-auth-page .he-register-benefits {
+    margin-top: 32px;
+    display: grid;
+    gap: 22px;
+}
+
+.homeease-auth-page .he-register-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+}
+
+.homeease-auth-page .he-register-benefit > span {
+    width: 27px;
+    height: 27px;
+    flex: 0 0 27px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--he-pink);
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 900;
+}
+
+.homeease-auth-page .he-register-benefit strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #FFFFFF;
+    font-size: 0.92rem;
+}
+
+.homeease-auth-page .he-register-benefit p {
+    margin: 0;
+    color: #E7DDEA;
+    font-size: 0.84rem;
+    line-height: 1.55;
+}
+
+.homeease-auth-page .he-login-aside-footer {
+    margin-top: 35px;
+    color: #F6D7E9;
+    font-size: 0.69rem;
+    font-weight: 750;
+    letter-spacing: 1.7px;
+}
+
+/* FOOTER */
+
+.homeease-auth-page .he-auth-footer {
+    padding: 19px;
+    color: var(--he-muted);
+    font-size: 0.84rem;
+    text-align: center;
+}
+
+.homeease-auth-page .he-auth-footer p {
+    margin: 0;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+    .homeease-auth-page .he-login-layout {
+        grid-template-columns: 1fr 0.85fr;
+    }
+
+    .homeease-auth-page .he-login-form-panel {
+        padding: 32px;
+    }
+
+    .homeease-auth-page .he-login-aside {
+        padding: 32px;
+    }
+
+    .homeease-auth-page .he-register-benefits {
+        gap: 17px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 680px) {
+    .homeease-auth-page .navbar {
+        min-height: 70px;
+    }
+
+    .homeease-auth-page .main-nav {
+        gap: 15px;
+    }
+
+    .homeease-auth-page .main-nav a {
+        font-size: 0.84rem;
+    }
+
+    .homeease-auth-page .he-auth-main {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .homeease-auth-page .he-login-layout {
+        grid-template-columns: 1fr;
+        border-radius: 17px;
+    }
+
+    .homeease-auth-page .he-login-form-panel {
+        padding: 32px 25px;
+    }
+
+    .homeease-auth-page .he-login-aside {
+        min-height: auto;
+        padding: 35px 27px;
+    }
+
+    .homeease-auth-page .he-login-symbol {
+        margin-top: 25px;
+    }
+
+    .homeease-auth-page .he-login-aside h2 {
+        font-size: 1.9rem;
+    }
+
+    .homeease-auth-page .he-login-aside-footer {
+        margin-top: 35px;
+    }
+}
+
+@media (max-width: 380px) {
+    .homeease-auth-page .homeease-brand-text {
+        font-size: 1.1rem;
+    }
+
+    .homeease-auth-page .brand-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .homeease-auth-page .main-nav {
+        gap: 10px;
+    }
+
+    .homeease-auth-page .main-nav a {
+        font-size: 0.78rem;
+    }
+
+    .homeease-auth-page .he-login-form-panel {
+        padding: 27px 20px;
+    }
+}

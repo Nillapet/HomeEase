@@ -1,0 +1,2043 @@
+
+/* =====================================================
+   HOME EASE CUSTOMER SECTION
+   Main Palette: Ice Blue | Midnight Ink | Vermillion
+   Sidebar: Living Room Background
+===================================================== */
+
+
+/* =====================================================
+   1. COLOUR VARIABLES AND BASE STYLING
+===================================================== */
+
+.customer-dashboard-page {
+    --customer-ice: #BFE8F5;
+    --customer-midnight: #142536;
+    --customer-midnight-dark: #0D1B2A;
+    --customer-midnight-light: #20384B;
+
+    --customer-vermillion: #F04438;
+    --customer-vermillion-dark: #D9342B;
+    --customer-vermillion-light: #FDEBE9;
+
+    --customer-frost: #F5F8FA;
+    --customer-white: #FFFFFF;
+    --customer-text: #203040;
+    --customer-muted: #718096;
+    --customer-border: #E1EAF0;
+
+    margin: 0;
+    background: var(--customer-frost);
+    color: var(--customer-text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =====================================================
+   2. MAIN LAYOUT
+===================================================== */
+
+.customer-layout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+/* =====================================================
+   3. CUSTOMER SIDEBAR
+   Visible Living Room Background
+===================================================== */
+
+.customer-dashboard-page .customer-sidebar {
+    width: 250px;
+    min-width: 250px;
+    min-height: 100vh;
+    height: 100vh;
+
+    padding: 30px 20px 22px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    position: sticky;
+    top: 0;
+    isolation: isolate;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20, 37, 54, 0.48) 0%,
+            rgba(20, 37, 54, 0.60) 50%,
+            rgba(13, 27, 42, 0.76) 100%
+        ),
+        url("../images/homeease/living-room.jpg")
+        center center / cover no-repeat !important;
+
+    color: #FFFFFF !important;
+    border-right: 1px solid rgba(191, 232, 245, 0.18);
+}
+
+
+/* BRAND */
+
+.customer-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 35px;
+
+    color: #FFFFFF !important;
+    text-decoration: none;
+}
+
+.customer-brand-mark {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+
+    border-radius: 12px;
+    background: #F04438 !important;
+    color: #FFFFFF !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    box-shadow: 0 4px 12px rgba(240, 68, 56, 0.25);
+}
+
+.customer-brand-name {
+    color: #FFFFFF !important;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.customer-brand-name span {
+    color: #BFE8F5 !important;
+}
+
+
+/* SIDEBAR USER */
+
+.customer-sidebar .sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 10px;
+    margin-bottom: 28px;
+
+    background: rgba(20, 37, 54, 0.58);
+    border: 1px solid rgba(191, 232, 245, 0.20);
+    border-radius: 12px;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.sidebar-user-avatar,
+.topbar-avatar {
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #BFE8F5;
+    color: #142536;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.sidebar-user-details {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidebar-user-details strong {
+    color: #FFFFFF !important;
+    font-size: 13px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-user-details span {
+    color: #D5E5ED !important;
+    font-size: 11px;
+}
+
+
+/* SIDEBAR LABELS */
+
+.sidebar-section-label {
+    margin: 0 0 12px 10px;
+
+    color: #BFE8F5 !important;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.sidebar-bottom-label {
+    margin-top: 30px;
+}
+
+
+/* SIDEBAR NAVIGATION */
+
+.customer-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.customer-sidebar .customer-sidebar-nav .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    width: 100%;
+    min-height: 46px;
+    padding: 0 13px;
+
+    box-sizing: border-box;
+    border-radius: 9px;
+
+    background: transparent !important;
+    color: #F5F8FA !important;
+
+    text-decoration: none !important;
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: background 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.customer-sidebar .customer-sidebar-nav .sidebar-link span {
+    color: inherit !important;
+}
+
+.customer-sidebar .customer-sidebar-nav .sidebar-link:hover {
+    background: rgba(191, 232, 245, 0.20) !important;
+    color: #BFE8F5 !important;
+    transform: translateX(4px);
+}
+
+.customer-sidebar .customer-sidebar-nav .sidebar-link.active {
+    background: #BFE8F5 !important;
+    color: #142536 !important;
+    box-shadow: 0 4px 14px rgba(191, 232, 245, 0.15);
+}
+
+.customer-sidebar .customer-sidebar-nav .sidebar-link.active span {
+    color: #142536 !important;
+}
+
+.sidebar-icon {
+    width: 22px;
+    min-width: 22px;
+
+    text-align: center;
+    font-size: 19px;
+    color: #BFE8F5 !important;
+}
+
+.customer-sidebar .customer-sidebar-nav .sidebar-link.active .sidebar-icon {
+    color: #142536 !important;
+}
+
+
+/* MESSAGE BADGE */
+
+.sidebar-message-badge {
+    margin-left: auto;
+
+    min-width: 21px;
+    height: 21px;
+    padding: 0 6px;
+
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    background: #F04438 !important;
+    color: #FFFFFF !important;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* SIDEBAR FOOTER */
+
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: auto;
+    padding: 17px 5px 0;
+
+    border-top: 1px solid rgba(191, 232, 245, 0.25);
+}
+
+.sidebar-footer-mark {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+
+    border-radius: 9px;
+    background: rgba(191, 232, 245, 0.18);
+    color: #BFE8F5 !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+}
+
+.sidebar-footer div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.sidebar-footer strong {
+    color: #FFFFFF !important;
+    font-size: 12px;
+}
+
+.sidebar-footer span {
+    color: #D5E5ED !important;
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   4. MAIN CONTENT AND TOP BAR
+===================================================== */
+
+.customer-main-content {
+    width: 100%;
+    min-width: 0;
+    max-width: 1600px;
+
+    padding: 30px 38px;
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            rgba(245, 248, 250, 0.91),
+            rgba(245, 248, 250, 0.96)
+        ),
+        url("../images/homeease/hero-kitchen.jpg")
+        center / cover fixed no-repeat;
+}
+
+.customer-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.topbar-label {
+    color: #E04439;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.customer-topbar h1 {
+    margin: 6px 0 0;
+    color: #142536;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.topbar-account {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.topbar-account div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.topbar-account strong {
+    color: #142536;
+    font-size: 13px;
+}
+
+.topbar-account span {
+    color: #718096;
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   5. WELCOME SECTION
+===================================================== */
+
+.customer-welcome {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    min-height: 250px;
+    padding: 38px 40px;
+
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(13, 27, 42, 0.98) 0%,
+            rgba(20, 37, 54, 0.92) 38%,
+            rgba(32, 62, 85, 0.78) 70%,
+            rgba(40, 84, 107, 0.55) 100%
+        ),
+        url("../images/homeease/hero-kitchen.jpg")
+        center / cover no-repeat;
+
+    border: 1px solid rgba(191, 232, 245, 0.2);
+    border-radius: 19px;
+
+    box-shadow: 0 12px 28px rgba(20, 37, 54, 0.12);
+    color: #FFFFFF;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 650px;
+}
+
+.welcome-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #BFE8F5;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.welcome-label::before {
+    content: "";
+    width: 23px;
+    height: 2px;
+
+    background: #F04438;
+    border-radius: 5px;
+}
+
+.welcome-content h2 {
+    margin: 15px 0 11px;
+
+    color: #FFFFFF;
+    font-size: 31px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    line-height: 1.25;
+}
+
+.welcome-content p {
+    max-width: 550px;
+    margin: 0 0 23px;
+
+    color: #DCEAF2;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.customer-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 13px 21px;
+
+    background: #F04438;
+    color: #FFFFFF;
+
+    border-radius: 8px;
+    box-shadow: 0 5px 14px rgba(240, 68, 56, 0.25);
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: all 0.25s ease;
+}
+
+.customer-primary-btn:hover {
+    background: #D9342B;
+    color: #FFFFFF;
+
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(240, 68, 56, 0.3);
+}
+
+.welcome-decoration {
+    position: absolute;
+    right: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 175px;
+    height: 175px;
+
+    border: 1px solid rgba(191, 232, 245, 0.3);
+    border-radius: 50%;
+
+    background: rgba(191, 232, 245, 0.035);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+.welcome-decoration::before {
+    content: "";
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border: 1px solid rgba(191, 232, 245, 0.25);
+    border-radius: 50%;
+}
+
+.welcome-decoration span {
+    color: rgba(191, 232, 245, 0.18);
+    font-size: 105px;
+    font-weight: 900;
+}
+
+
+/* =====================================================
+   6. DASHBOARD SECTION HEADINGS
+===================================================== */
+
+.customer-dashboard-section {
+    width: 100%;
+    margin-top: 38px;
+}
+
+.customer-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.section-eyebrow {
+    color: #E34B40;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+.customer-section-heading h2 {
+    margin: 7px 0 5px;
+
+    color: #142536;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.35px;
+}
+
+.customer-section-heading p {
+    margin: 0;
+    color: #718096;
+    font-size: 12px;
+}
+
+.customer-view-link {
+    color: #E04439;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: color 0.2s ease;
+}
+
+.customer-view-link:hover {
+    color: #142536;
+}
+
+
+/* =====================================================
+   7. BOOKING STATISTICS
+===================================================== */
+
+.customer-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    width: 100%;
+}
+
+.customer-stat-card {
+    position: relative;
+    overflow: hidden;
+
+    min-width: 0;
+    padding: 21px;
+
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #E1EAF0;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 15px rgba(20, 37, 54, 0.035);
+    box-sizing: border-box;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.customer-stat-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #BFE8F5;
+}
+
+.customer-stat-card:hover {
+    transform: translateY(-4px);
+    border-color: #BFE8F5;
+    box-shadow: 0 10px 25px rgba(20, 37, 54, 0.09);
+}
+
+.customer-stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.customer-stat-icon {
+    width: 37px;
+    height: 37px;
+    min-width: 37px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.green-icon {
+    background: #E5F3F8;
+    color: #20536D;
+}
+
+.burgundy-icon {
+    background: #FDEBE9;
+    color: #F04438;
+}
+
+.neutral-icon {
+    background: #EDF1F5;
+    color: #536879;
+}
+
+.customer-stat-card > strong {
+    display: block;
+    margin-top: 17px;
+
+    color: #142536;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.customer-stat-card > p {
+    margin: 5px 0 0;
+    color: #718096;
+    font-size: 11px;
+}
+
+.customer-stat-label {
+    color: #718096;
+    font-size: 9px;
+    letter-spacing: 0.7px;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   8. QUICK ACTION CARDS
+===================================================== */
+
+.customer-action-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+}
+
+.customer-action-card {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+    min-height: 225px;
+    padding: 23px;
+
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #E1EAF0;
+    border-radius: 15px;
+
+    box-sizing: border-box;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    box-shadow: 0 4px 15px rgba(20, 37, 54, 0.035);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.customer-action-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: #F04438;
+    transition: width 0.25s ease;
+}
+
+.customer-action-card:hover {
+    transform: translateY(-5px);
+    border-color: #C9E8F2;
+    box-shadow: 0 12px 26px rgba(20, 37, 54, 0.085);
+}
+
+.customer-action-card:hover::before {
+    width: 100%;
+}
+
+.customer-action-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.customer-action-card h3 {
+    margin: 17px 0 9px;
+
+    color: #142536;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+}
+
+.customer-action-card p {
+    margin: 0 0 18px;
+
+    color: #718096;
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.customer-action-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: auto;
+
+    color: #E04439;
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.customer-action-link:hover {
+    color: #142536;
+    gap: 13px;
+}
+
+.customer-unread-label {
+    display: inline-block;
+    margin: -2px 0 10px;
+    padding: 5px 9px;
+
+    background: #FDEBE9;
+    color: #D9342B;
+
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   9. HELP SECTION
+===================================================== */
+
+.customer-help-section {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    width: 100%;
+    margin-top: 35px;
+    padding: 23px 25px;
+
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        105deg,
+        #E5F3F8 0%,
+        #F3F9FC 100%
+    );
+
+    border: 1px solid #D5EAF2;
+    border-left: 4px solid #F04438;
+    border-radius: 14px;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.help-section-icon {
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #FFFFFF;
+    color: #F04438;
+
+    border-radius: 11px;
+    font-size: 22px;
+
+    box-shadow: 0 3px 10px rgba(20, 37, 54, 0.06);
+}
+
+.help-section-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.help-section-content h2 {
+    margin: 0 0 6px;
+    color: #142536;
+    font-size: 15px;
+}
+
+.help-section-content p {
+    margin: 0;
+    color: #536879;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.customer-help-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 17px;
+
+    background: #F04438;
+    color: #FFFFFF;
+
+    border-radius: 7px;
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    box-shadow: 0 4px 12px rgba(240, 68, 56, 0.18);
+    transition: all 0.2s ease;
+}
+
+.customer-help-btn:hover {
+    background: #D9342B;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   10. CUSTOMER FOOTER
+===================================================== */
+
+.customer-dashboard-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-top: 38px;
+    padding: 18px 0;
+
+    border-top: 1px solid #DDE7ED;
+
+    color: #8293A1;
+    font-size: 10px;
+}
+
+.customer-dashboard-footer p {
+    margin: 0;
+}
+
+
+/* =====================================================
+   11. FIND A SERVICE PAGE
+===================================================== */
+
+.customer-search-page {
+    background: #F5F8FA;
+}
+
+
+/* SEARCH HERO */
+
+.service-search-hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(13, 27, 42, 0.97) 0%,
+            rgba(20, 37, 54, 0.88) 45%,
+            rgba(32, 62, 85, 0.65) 100%
+        ),
+        url("../images/homeease/cleaning.jpg")
+        center / cover no-repeat;
+
+    color: #FFFFFF;
+    border: 1px solid rgba(191, 232, 245, 0.2);
+    border-radius: 18px;
+
+    padding: 35px;
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(20, 37, 54, 0.10);
+}
+
+.service-search-hero > div:first-child {
+    max-width: 650px;
+}
+
+.search-eyebrow {
+    display: inline-block;
+    color: #BFE8F5;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+}
+
+.service-search-hero h1 {
+    color: #FFFFFF;
+    font-size: 30px;
+    margin: 0 0 12px;
+}
+
+.service-search-hero p {
+    color: #DCEAF2;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.search-hero-decoration {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+
+    border: 1px solid rgba(191, 232, 245, 0.3);
+    border-radius: 50%;
+
+    background: rgba(191, 232, 245, 0.035);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-hero-decoration span {
+    font-size: 65px;
+    font-weight: 800;
+    color: rgba(191, 232, 245, 0.2);
+}
+
+
+/* SEARCH FORM CARD */
+
+.service-search-card {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #E1EAF0;
+    border-radius: 16px;
+
+    padding: 28px;
+    margin-bottom: 30px;
+
+    box-shadow: 0 5px 20px rgba(20, 37, 54, 0.04);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.service-search-heading h2,
+.service-search-tips-heading h2 {
+    color: #142536;
+    font-size: 20px;
+    margin: 0 0 8px;
+}
+
+.service-search-heading p {
+    color: #718096;
+    font-size: 13px;
+    margin: 0 0 25px;
+}
+
+.service-search-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+    gap: 18px;
+}
+
+.service-search-form .search-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.service-search-form label {
+    color: #203040;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.service-search-form input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #D8E5EC;
+    border-radius: 8px;
+
+    background: #F9FCFD;
+    color: #142536;
+
+    font-size: 13px;
+    outline: none;
+}
+
+.service-search-form input:focus {
+    border-color: #F04438;
+    box-shadow: 0 0 0 3px rgba(240, 68, 56, 0.12);
+}
+
+.service-search-button {
+    min-height: 48px;
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #F04438;
+    color: #FFFFFF;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.service-search-button:hover {
+    background: #D9342B;
+    box-shadow: 0 5px 14px rgba(240, 68, 56, 0.2);
+}
+
+.service-search-button span {
+    margin-left: 8px;
+}
+
+
+/* SEARCH RESULTS */
+
+.service-results-section {
+    margin-top: 30px;
+}
+
+.service-results-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+.service-results-heading h2 {
+    color: #142536;
+    font-size: 22px;
+    margin: 0 0 8px;
+}
+
+.service-results-heading p {
+    color: #718096;
+    font-size: 13px;
+    margin: 0;
+}
+
+.service-results-heading p strong {
+    color: #203040;
+}
+
+.service-results-heading p span {
+    margin: 0 7px;
+}
+
+.service-results-count {
+    background: #E5F3F8;
+    color: #20536D;
+
+    padding: 9px 14px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* PROVIDER RESULT CARDS */
+
+.provider-results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.provider-result-card {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #E1EAF0;
+    border-radius: 15px;
+
+    padding: 23px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    box-shadow: 0 5px 18px rgba(20, 37, 54, 0.04);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.provider-result-card:hover {
+    transform: translateY(-4px);
+    border-color: #BFE8F5;
+    box-shadow: 0 12px 25px rgba(20, 37, 54, 0.09);
+}
+
+.provider-card-top {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 17px;
+}
+
+.provider-avatar {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+    background: #E5F3F8;
+    color: #20536D;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.provider-label {
+    color: #20536D;
+    background: #E5F3F8;
+
+    padding: 7px 11px;
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.provider-label span {
+    width: 9px;
+    height: 9px;
+
+    display: inline-block;
+
+    background: #BFE8F5;
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 4px rgba(191, 232, 245, 0.18);
+}
+
+.provider-result-card h3 {
+    color: #142536;
+    font-size: 17px;
+    margin: 0 0 10px;
+}
+
+.provider-service-tag {
+    display: inline-block;
+
+    background: #FDEBE9;
+    color: #D9342B;
+
+    border-radius: 6px;
+    padding: 7px 10px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    margin-bottom: 13px;
+}
+
+.provider-location {
+    color: #718096;
+    font-size: 12px;
+    margin: 0 0 16px;
+}
+
+.provider-location span {
+    color: #F04438;
+    margin-right: 5px;
+}
+
+.provider-description {
+    width: 100%;
+    margin-bottom: 13px;
+}
+
+.provider-description strong {
+    color: #203040;
+    font-size: 12px;
+}
+
+.provider-description p,
+.provider-profile-summary {
+    color: #718096;
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 7px 0 0;
+}
+
+.provider-profile-summary {
+    margin-bottom: 18px;
+}
+
+.provider-view-btn {
+    width: 100%;
+    min-height: 43px;
+
+    margin-top: auto;
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    background: #F04438;
+    color: #FFFFFF !important;
+
+    text-decoration: none;
+    text-align: center;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.provider-view-btn:hover {
+    background: #D9342B;
+    color: #FFFFFF !important;
+    box-shadow: 0 5px 14px rgba(240, 68, 56, 0.2);
+}
+
+.provider-view-btn span {
+    margin-left: 7px;
+}
+
+
+/* EMPTY SEARCH RESULTS */
+
+.search-empty-state {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #E1EAF0;
+    border-radius: 14px;
+
+    padding: 45px 25px;
+    text-align: center;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.empty-state-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+    background: #E5F3F8;
+    color: #20536D;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.search-empty-state h3 {
+    color: #142536;
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.search-empty-state p {
+    max-width: 480px;
+    margin: 0 auto 20px;
+
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.search-reset-btn {
+    display: inline-block;
+
+    padding: 11px 20px;
+
+    border-radius: 7px;
+
+    background: #F04438;
+    color: #FFFFFF !important;
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.search-reset-btn:hover {
+    background: #D9342B;
+}
+
+
+/* SEARCH ERRORS */
+
+.service-search-error {
+    background: #FDEBE9;
+    color: #B52E27;
+
+    border: 1px solid #F5C9C5;
+    border-radius: 9px;
+
+    padding: 15px 18px;
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+
+/* SEARCH TIPS */
+
+.service-search-tips {
+    margin-top: 35px;
+}
+
+.service-search-tips-heading {
+    margin-bottom: 18px;
+}
+
+.search-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.search-tips-grid article {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #E1EAF0;
+    border-radius: 12px;
+
+    padding: 22px;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.tip-number {
+    display: inline-block;
+    color: #F04438;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    margin-bottom: 13px;
+}
+
+.search-tips-grid h3 {
+    color: #142536;
+    font-size: 14px;
+    margin: 0 0 9px;
+}
+
+.search-tips-grid p {
+    color: #718096;
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =====================================================
+   12. MY BOOKINGS PAGE
+===================================================== */
+
+.bookings-page-heading h1,
+.booking-list-heading h2 {
+    color: #142536 !important;
+}
+
+.bookings-page-heading p,
+.booking-list-heading p {
+    color: #718096 !important;
+}
+
+.booking-stat-card,
+.customer-booking-card,
+.customer-bookings-empty {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid #E1EAF0 !important;
+    border-radius: 14px !important;
+
+    box-shadow: 0 4px 15px rgba(20, 37, 54, 0.04);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.booking-stat-label,
+.booking-stat-note,
+.booking-detail-label {
+    color: #718096 !important;
+}
+
+.booking-stat-card strong {
+    color: #142536 !important;
+}
+
+.pending-stat strong {
+    color: #C18421 !important;
+}
+
+.accepted-stat strong {
+    color: #21866A !important;
+}
+
+.rejected-stat strong {
+    color: #D9342B !important;
+}
+
+.booking-total-label {
+    background: #E5F3F8 !important;
+    color: #20536D !important;
+}
+
+.customer-booking-card h3,
+.booking-provider strong,
+.booking-detail strong,
+.customer-bookings-empty h3 {
+    color: #142536 !important;
+}
+
+.booking-service-label {
+    color: #718096 !important;
+}
+
+.status-pending {
+    background: #FFF3DC !important;
+    color: #94620E !important;
+}
+
+.status-accepted {
+    background: #E4F2E9 !important;
+    color: #176B45 !important;
+}
+
+.status-rejected {
+    background: #FDEBE9 !important;
+    color: #B52E27 !important;
+}
+
+.booking-detail-row {
+    border-color: #E1EAF0 !important;
+}
+
+.booking-status-note,
+.customer-bookings-empty p {
+    color: #718096 !important;
+}
+
+.booking-actions {
+    border-top-color: #E1EAF0 !important;
+}
+
+.booking-profile-btn {
+    background: #E5F3F8 !important;
+    color: #20536D !important;
+    border-color: #CBE5EF !important;
+}
+
+.booking-profile-btn:hover {
+    background: #D5EDF5 !important;
+}
+
+.booking-message-btn,
+.bookings-primary-btn {
+    background: #F04438 !important;
+    color: #FFFFFF !important;
+    border-color: #F04438 !important;
+}
+
+.booking-message-btn:hover,
+.bookings-primary-btn:hover {
+    background: #D9342B !important;
+    border-color: #D9342B !important;
+}
+
+.bookings-back-link a {
+    color: #20536D !important;
+}
+
+.bookings-back-link a:hover {
+    color: #F04438 !important;
+}
+
+.booking-empty-icon {
+    color: #20536D;
+}
+
+
+/* =====================================================
+   13. MY MESSAGES PAGE
+===================================================== */
+
+.messages-heading h1 {
+    color: #142536 !important;
+}
+
+.messages-heading p {
+    color: #718096 !important;
+}
+
+.conversation-card {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid #E1EAF0 !important;
+    border-radius: 14px !important;
+
+    box-shadow: 0 4px 15px rgba(20, 37, 54, 0.035);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    transition: border-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.conversation-card:hover {
+    border-color: #BFE8F5 !important;
+    box-shadow: 0 9px 22px rgba(20, 37, 54, 0.08);
+}
+
+.conversation-avatar {
+    background: #E5F3F8 !important;
+    color: #20536D !important;
+}
+
+.conversation-details h2 {
+    color: #142536 !important;
+}
+
+.conversation-details p {
+    color: #536879 !important;
+}
+
+.conversation-email,
+.conversation-date {
+    color: #8293A1 !important;
+}
+
+.conversation-unread {
+    background: #F04438 !important;
+    color: #FFFFFF !important;
+}
+
+.conversation-arrow {
+    color: #F04438 !important;
+}
+
+.messages-empty {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid #E1EAF0 !important;
+    border-radius: 14px !important;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.messages-empty h2 {
+    color: #142536 !important;
+}
+
+.messages-empty p {
+    color: #718096 !important;
+}
+
+.messages-empty-icon {
+    color: #F04438;
+}
+
+.messages-primary-btn {
+    background: #F04438 !important;
+    color: #FFFFFF !important;
+}
+
+.messages-primary-btn:hover {
+    background: #D9342B !important;
+}
+
+.messages-error {
+    background: #FDEBE9 !important;
+    color: #B52E27 !important;
+    border-color: #F5C9C5 !important;
+}
+
+
+/* =====================================================
+   14. SHARED CHAT AND PAGE ELEMENTS
+===================================================== */
+
+.back-link,
+.notice a {
+    color: #142536;
+}
+
+.back-link:hover {
+    background: #BFE8F5;
+    border-color: #BFE8F5;
+}
+
+.chat-form button {
+    background: #F04438;
+}
+
+.chat-form button:hover:not(:disabled) {
+    background: #D9342B;
+}
+
+
+/* =====================================================
+   15. RESPONSIVE DESIGN
+===================================================== */
+
+
+/* TABLETS AND SMALL LAPTOPS */
+
+@media (max-width: 1200px) {
+
+    .customer-main-content {
+        padding: 28px 25px;
+    }
+
+    .customer-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .customer-action-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* SMALLER TABLETS */
+
+@media (max-width: 850px) {
+
+    .customer-layout {
+        grid-template-columns: 215px minmax(0, 1fr);
+    }
+
+    .customer-dashboard-page .customer-sidebar {
+        width: 215px;
+        min-width: 215px;
+        padding: 25px 14px 20px;
+    }
+
+    .customer-main-content {
+        padding: 23px 18px;
+    }
+
+    .welcome-decoration {
+        right: -25px;
+        opacity: 0.45;
+    }
+
+    .service-search-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .service-search-button {
+        grid-column: 1 / -1;
+    }
+
+    .provider-results-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .customer-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .customer-dashboard-page .customer-sidebar {
+        position: relative;
+
+        width: 100%;
+        min-width: 0;
+
+        height: auto;
+        min-height: auto;
+
+        padding: 18px;
+
+        overflow: visible;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(20, 37, 54, 0.48) 0%,
+                rgba(20, 37, 54, 0.65) 100%
+            ),
+            url("../images/homeease/living-room.jpg")
+            center 45% / cover no-repeat !important;
+    }
+
+    .customer-brand {
+        margin-bottom: 18px;
+    }
+
+    .customer-sidebar .sidebar-user {
+        margin-bottom: 18px;
+    }
+
+    .sidebar-section-label {
+        margin-top: 10px;
+    }
+
+    .customer-sidebar-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .sidebar-bottom-label {
+        margin-top: 18px;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .customer-main-content {
+        width: 100%;
+        padding: 23px 18px;
+    }
+
+    .customer-welcome {
+        padding: 27px 23px;
+        min-height: 240px;
+    }
+
+    .welcome-content h2 {
+        font-size: 25px;
+    }
+
+    .welcome-decoration {
+        right: -100px;
+        opacity: 0.35;
+    }
+
+    .service-search-hero {
+        padding: 25px;
+    }
+
+    .service-search-hero h1 {
+        font-size: 23px;
+    }
+
+    .search-hero-decoration {
+        display: none;
+    }
+
+    .service-search-card {
+        padding: 20px;
+    }
+
+    .service-search-form {
+        grid-template-columns: 1fr;
+    }
+
+    .service-search-button {
+        grid-column: auto;
+    }
+
+    .provider-results-grid,
+    .search-tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-results-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+
+/* SMALL MOBILE SCREENS */
+
+@media (max-width: 480px) {
+
+    .customer-topbar {
+        align-items: flex-start;
+    }
+
+    .topbar-account div:last-child {
+        display: none;
+    }
+
+    .customer-topbar h1 {
+        font-size: 23px;
+    }
+
+    .customer-welcome {
+        padding: 27px 23px;
+    }
+
+    .welcome-content h2 {
+        font-size: 24px;
+    }
+
+    .welcome-content p {
+        font-size: 12px;
+    }
+
+    .customer-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .customer-action-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .customer-action-card {
+        min-height: 190px;
+    }
+
+    .customer-help-section {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .help-section-content {
+        min-width: 180px;
+    }
+
+    .customer-help-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .customer-dashboard-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .service-search-hero {
+        padding: 25px;
+    }
+
+    .service-search-hero h1 {
+        font-size: 23px;
+    }
+
+}
+
+
+/* VERY SMALL MOBILE SCREENS */
+
+@media (max-width: 380px) {
+
+    .customer-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .customer-sidebar-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .customer-main-content {
+        padding: 18px 13px;
+    }
+
+}
+/* =====================================================
+   CONSISTENT CUSTOMER PAGE ALIGNMENT
+===================================================== */
+
+.customer-main-content {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding-left: 38px !important;
+    padding-right: 38px !important;
+}
+
+/* Tablets */
+@media (max-width: 850px) {
+    .customer-main-content {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .customer-main-content {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+}

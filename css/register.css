@@ -1,0 +1,563 @@
+
+/* ==========================================================
+   HOME EASE - CREATE ACCOUNT PAGE
+   Dedicated stylesheet: css/register.css
+
+   Colour palette:
+   Deep Navy:  #14243D
+   Purple:     #56365E
+   Rose Pink:  #C04489
+   Hot Pink:   #FF3D9A
+   Pale Pink:  #FFF0F7
+   ========================================================== */
+
+
+/* ==========================================
+   GENERAL PAGE STYLING
+   ========================================== */
+
+.homeease-auth-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #F7F5F8;
+    color: #14243D;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.homeease-auth-page *,
+.homeease-auth-page *::before,
+.homeease-auth-page *::after {
+    box-sizing: border-box;
+}
+
+.homeease-auth-page a {
+    text-decoration: none;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.homeease-auth-page .main-header {
+    width: 100%;
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 7%;
+    background: #FFFFFF;
+    border-bottom: 1px solid #EAE5EC;
+    position: relative;
+    z-index: 10;
+}
+
+.homeease-auth-page .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #14243D;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.homeease-auth-page .brand-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #56365E, #C04489);
+}
+
+.homeease-auth-page .homeease-brand-text {
+    color: #14243D;
+}
+
+.homeease-auth-page .brand-accent {
+    color: #C04489;
+}
+
+.homeease-auth-page .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.homeease-auth-page .main-nav a {
+    color: #39465A;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.homeease-auth-page .main-nav a:hover {
+    color: #C04489;
+}
+
+.homeease-auth-page .main-nav .nav-register {
+    padding: 11px 21px;
+    color: #FFFFFF;
+    background: linear-gradient(120deg, #56365E, #C04489);
+    border-radius: 8px;
+}
+
+.homeease-auth-page .main-nav .nav-register:hover {
+    color: #FFFFFF;
+    background: linear-gradient(120deg, #43294B, #A93275);
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+
+.homeease-auth-page .he-auth-main {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 6%;
+}
+
+.he-register-layout {
+    width: 100%;
+    max-width: 1150px;
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    background: #FFFFFF;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 55px rgba(20, 36, 61, 0.10);
+}
+
+
+/* ==========================================
+   REGISTRATION FORM PANEL
+   ========================================== */
+
+.he-register-form-panel {
+    padding: 55px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #FFFFFF;
+}
+
+.he-register-heading {
+    margin: 0 0 12px;
+    color: #14243D;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.he-auth-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #C04489;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.he-register-form-panel > p {
+    margin: 0 0 27px;
+    color: #737887;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   SUCCESS AND ERROR MESSAGES
+   ========================================== */
+
+.he-auth-message {
+    padding: 13px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.he-auth-success {
+    color: #176B43;
+    background: #EAF8F0;
+    border: 1px solid #B9E7CB;
+}
+
+.he-auth-error {
+    color: #A52B3B;
+    background: #FFF0F1;
+    border: 1px solid #F3C5CB;
+}
+
+
+/* ==========================================
+   REGISTRATION FORM
+   ========================================== */
+
+.he-register-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.he-form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.he-form-group label {
+    color: #29364A;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.he-form-group input,
+.he-form-group select {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    color: #14243D;
+    background: #FFFFFF;
+    border: 1px solid #DDD9E2;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.he-form-group input::placeholder {
+    color: #A0A0AA;
+}
+
+.he-form-group input:focus,
+.he-form-group select:focus {
+    border-color: #C04489;
+    box-shadow: 0 0 0 3px rgba(192, 68, 137, 0.12);
+}
+
+.he-form-group select {
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   CREATE ACCOUNT BUTTON
+   ========================================== */
+
+.he-register-submit {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 7px;
+    padding: 14px 20px;
+    color: #FFFFFF;
+    background: linear-gradient(110deg, #56365E, #C04489, #FF3D9A);
+    border: none;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.he-register-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(192, 68, 137, 0.25);
+}
+
+.he-register-submit:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   FORM LINKS
+   ========================================== */
+
+.he-register-login {
+    margin-top: 23px;
+    color: #737887;
+    text-align: center;
+    font-size: 13px;
+}
+
+.he-register-login a {
+    color: #C04489;
+    font-weight: 700;
+}
+
+.he-register-login a:hover {
+    color: #56365E;
+    text-decoration: underline;
+}
+
+.he-register-back {
+    display: inline-block;
+    margin-top: 17px;
+    color: #697386;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.he-register-back:hover {
+    color: #C04489;
+}
+
+
+/* ==========================================
+   RIGHT PROMOTIONAL PANEL
+   Background image with purple fade from left
+   ========================================== */
+
+.he-register-aside {
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 45px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 36, 61, 0.97) 0%,
+            rgba(86, 54, 94, 0.90) 38%,
+            rgba(86, 54, 94, 0.62) 70%,
+            rgba(192, 68, 137, 0.38) 100%
+        ),
+        url("../images/homeease/hero-kitchen.jpg") center / cover no-repeat;
+}
+
+.he-register-aside-content {
+    width: 100%;
+    max-width: 390px;
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF;
+}
+
+.he-aside-kicker {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 8px 13px;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.he-aside-symbol {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #C04489, #FF3D9A);
+    border-radius: 18px;
+    font-size: 28px;
+}
+
+.he-register-aside-content h2 {
+    margin: 0 0 17px;
+    color: #FFFFFF;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.he-register-aside-content > p {
+    margin: 0 0 30px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   BENEFITS LIST
+   ========================================== */
+
+.he-register-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.he-register-benefit {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #FFFFFF;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.he-register-benefit::before {
+    content: "✓";
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: rgba(255, 61, 154, 0.85);
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* ==========================================
+   ASIDE FOOTER
+   ========================================== */
+
+.he-register-aside-footer {
+    margin-top: 42px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   PAGE FOOTER
+   ========================================== */
+
+.he-auth-footer {
+    width: 100%;
+    padding: 20px;
+    color: #85818D;
+    background: #FFFFFF;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 950px) {
+
+    .homeease-auth-page .he-auth-main {
+        padding: 35px 4%;
+    }
+
+    .he-register-layout {
+        grid-template-columns: 1fr 0.85fr;
+    }
+
+    .he-register-form-panel {
+        padding: 40px 35px;
+    }
+
+    .he-register-aside {
+        padding: 40px 30px;
+    }
+
+    .he-register-aside-content h2 {
+        font-size: 29px;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .homeease-auth-page .main-header {
+        padding: 14px 5%;
+    }
+
+    .homeease-auth-page .main-nav {
+        gap: 13px;
+    }
+
+    .homeease-auth-page .main-nav a {
+        font-size: 12px;
+    }
+
+    .he-register-layout {
+        max-width: 560px;
+        grid-template-columns: 1fr;
+    }
+
+    .he-register-form-panel {
+        padding: 45px 35px;
+    }
+
+    .he-register-aside {
+        min-height: 480px;
+        padding: 45px 35px;
+        background:
+            linear-gradient(
+                90deg,
+                rgba(20, 36, 61, 0.94) 0%,
+                rgba(86, 54, 94, 0.82) 55%,
+                rgba(192, 68, 137, 0.55) 100%
+            ),
+            url("../images/homeease/hero-kitchen.jpg") center / cover no-repeat;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .homeease-auth-page .main-header {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .homeease-auth-page .main-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .homeease-auth-page .he-auth-main {
+        padding: 22px 4%;
+    }
+
+    .he-register-layout {
+        border-radius: 14px;
+    }
+
+    .he-register-form-panel {
+        padding: 35px 23px;
+    }
+
+    .he-register-heading {
+        font-size: 27px;
+    }
+
+    .he-register-aside {
+        min-height: 440px;
+        padding: 35px 25px;
+    }
+
+    .he-register-aside-content h2 {
+        font-size: 27px;
+    }
+}
